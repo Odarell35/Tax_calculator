@@ -10,5 +10,8 @@
     <input type="number" id="income" name="income" required>
     <button type="submit">Calculate Tax</button>
 </form>
+<div th:if="${error}" style="color: red;">
+    <p th:text="${error}"></p>
+</div>
 </body>
 </html>

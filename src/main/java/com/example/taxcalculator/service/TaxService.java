@@ -6,6 +6,10 @@ import org.springframework.stereotype.Service;
 public class TaxService {
 
     public double calculateTax(double income) {
+        if (income < 0) {
+            throw new IllegalArgumentException("Income cannot be negative.");
+        }
+
         if (income <= 237100) {
             return income * 0.18;
         } else if (income <= 370500) {
