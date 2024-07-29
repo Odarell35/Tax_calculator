@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tax Calculation Result</title>
+</head>
+<body>
+<h1>Tax Calculation Result</h1>
+<p>Income: R<span th:text="${income}"></span></p>
+<p>Tax to be paid: R<span th:text="${tax}"></span></p>
+<a href="/">Calculate another tax</a>
+</body>
+</html>
