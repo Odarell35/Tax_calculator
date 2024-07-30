@@ -30,13 +30,13 @@ public class TaxService {
         }
     }
 
-    public static double calculateTaxAge(double income, int age, int dependants, boolean isMember) {
+    public static double calculateTaxAge(double income, int age, double additional) {
         double tax = 0.0;
         double finalTax = 0.0;
         if (income < 0) {
             throw new IllegalArgumentException("Income cannot be negative.");
         }
-
+        income = income + additional;
         // Calculate the basic tax based on age and income
         if (age < 65) {
             if (income <= 95750) {
@@ -112,20 +112,13 @@ public class TaxService {
             }
         }
 
-        // Calculate medical scheme credits for 2024
-        double medicalTaxCredit = isMember ? TAXPAYER_CREDIT_2024 + (dependants * DEPENDANT_CREDIT_2024) : dependants * DEPENDANT_CREDIT_2024;
-        
-        // Apply medical scheme credits
-        double finalTaxAfterCredits = tax - (medicalTaxCredit * 12);
-        double finalTax = finalTaxAfterCredits / 12;
+        // Calculate medical scheme credits for 202
+        finalTax = tax  / 12;
 
         // Ensure tax liability is not negative
         return Math.max(finalTax, 0);
     }
 
-    // Overloaded method without dependants and isMember
-    public static double calculateBasic(double income, int age) {
-        return calculateTaxAge(income, age, 0, false); // Default values: 0 dependants, not a member
-    }
+    // Overloaded method without dependants and isMembe
 
 }
