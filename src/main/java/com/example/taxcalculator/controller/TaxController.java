@@ -62,5 +62,5 @@ public class TaxController {
     public String handleIllegalArgumentException(IllegalArgumentException e, Model model) {
         model.addAttribute("error", e.getMessage());
         return "index";
-    }
+      }
 }
