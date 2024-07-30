@@ -53,7 +53,7 @@ public class TaxController {
             model.addAttribute("income2", income2);
             model.addAttribute("age", age);
             model.addAttribute("tax2", tax2);
-            return "result";
+            return "index";
         } catch (IllegalArgumentException e) {
             model.addAttribute("error", e.getMessage());
             return "index";
