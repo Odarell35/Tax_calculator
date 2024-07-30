@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+  <head>
     <title>Tax Calculator</title>
-</head>
-<body>
-<h1>Income Tax Calculator</h1>
-<form action="/calculate" method="post">
-    <label for="income">Enter your income:</label>
-    <input type="number" id="income" name="income" required>
-    <button type="submit">Calculate Tax</button>
-</form>
-<div th:if="${error}" style="color: red;">
-    <p th:text="${error}"></p>
-</div>
-</body>
+  </head>
+  <body>
+    <h1>Income Tax CalculatorXXXX</h1>
+    <form action="/calculate" method="post">
+      <label for="income">Enter your income:</label>
+      <input type="number" id="income" name="income" required />
+      <button type="submit">Calculate Tax</button>
+    </form>
+
+    <h1>Income Tax Calculator Based on Age</h1>
+
+    <form action="/calculatewithAge" method="post">
+      <label for="income">Enter your income:</label>
+      <label for="age">Enter your age:</label>
+      <input type="number" id="income" name="income" required />
+      <input type="number" id="age" name="age" required />
+      <button type="submit">Calculate Tax</button>
+    </form>
+    <div th:if="${error}" style="color: red">
+      <p th:text="${error}"></p>
+    </div>
+  </body>
 </html>
