@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+  <head>
     <title>Tax Calculation Result</title>
-</head>
-<body>
-<h1>Tax Calculation Result</h1>
-<p th:if="${income != null and income != ''}">Income: R<span th:text="${income}"></span></p>
-<p th:if="${tax != null and tax != ''}">Tax to be paid: R<span th:text="${tax}"></span></p>
+  </head>
+  <body>
+    <h1>Tax Calculation Result</h1>
+    <p th:if="${income != null and income != ''}">
+      Income: R<span th:text="${income}"></span>
+    </p>
+    <p th:if="${tax != null and tax != ''}">
+      Tax to be paid: R<span th:text="${tax}"></span>
+    </p>
 
+    <p th:if="${age != null and age != ''}">
+      Age: <span th:text="${age}"></span>
+    </p>
+    <p th:if="${income2 != null and income2 != ''}">
+      Income: R<span th:text="${income2}"></span>
+    </p>
+    <p th:if="${tax2 != null and tax2 != ''}">
+      Tax to be paid: R <span th:text="${tax2}"></span> per month
+    </p>
 
-<p th:if="${age != null and age != ''}">Age: <span th:text="${age}"></span></p>
-<p th:if="${income2 != null and income2 != ''}">Income: R<span th:text="${income2}"></span></p>
-<p th:if="${tax2 != null and tax2 != ''}">Tax to be paid: R<span th:text="${tax2}"></span></p>
-
-<a href="/">Calculate another tax</a>
-</body>
+    <a href="/">Calculate another tax</a>
+  </body>
 </html>

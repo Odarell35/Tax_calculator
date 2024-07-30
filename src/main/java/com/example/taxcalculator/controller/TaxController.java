@@ -46,6 +46,9 @@ public class TaxController {
             if (age < 0) {
                 throw new IllegalArgumentException("Age cannot be negative.");
             }
+            if (income2 < 0) {
+                throw new IllegalArgumentException("Income must be greater than 0.");
+            }
             double tax2 = taxService.calculateTaxAge(income2, age);
             model.addAttribute("income2", income2);
             model.addAttribute("age", age);
@@ -62,5 +65,5 @@ public class TaxController {
     public String handleIllegalArgumentException(IllegalArgumentException e, Model model) {
         model.addAttribute("error", e.getMessage());
         return "index";
-      }
+    }
 }
