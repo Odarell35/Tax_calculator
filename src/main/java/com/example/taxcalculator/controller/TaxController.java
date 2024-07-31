@@ -57,6 +57,7 @@ public class TaxController {
             model.addAttribute("additional", additional);
             model.addAttribute("deduction", deduction);
             model.addAttribute("tax2", tax2);
+            model.addAttribute("yearly", tax2 * 12);
             return "index";
         } catch (IllegalArgumentException e) {
             model.addAttribute("error", e.getMessage());

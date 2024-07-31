@@ -279,14 +279,14 @@ main button {
                   <p>Your monthly repayments</p>
                   <span class="repayment" for="repayments">
                     R <div class="d-inline-block" th:if="${income2 != null and income2 != ''}">
-                        <span th:text="${income2}"></span>
+                        <span th:text="${tax2}"></span>
                       </div>
                     </span>
                     <hr>
                   <p>Total you'll repay over the term</p>
                   <span class="totalrep" for="totalRepayment">
                     R <div class="d-inline-block" th:if="${income2 != null and income2 != ''}">
-                        <span th:text="${income2}"></span>
+                        <span th:text="${yearly}"></span>
                       </div>
                 </div>
                 </div>
