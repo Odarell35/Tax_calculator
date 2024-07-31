@@ -30,13 +30,15 @@ public class TaxService {
         }
     }
 
-    public static double calculateTaxAge(double income, int age, double additional) {
+    public static double calculateTaxAge(double income, int age, double additional, double deduction) {
         double tax = 0.0;
         double finalTax = 0.0;
+        additional = 0.0;
+        deduction = 0.0;
         if (income < 0) {
             throw new IllegalArgumentException("Income cannot be negative.");
         }
-        income = income + additional;
+        income = income + (additional - deduction);
         // Calculate the basic tax based on age and income
         if (age < 65) {
             if (income <= 95750) {
