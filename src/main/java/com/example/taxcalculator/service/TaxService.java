@@ -27,14 +27,15 @@ public class TaxService {
         }
     }
 
-    public double calculateTaxAge(double income, int age) {
-        double tax = 0.0;
-        double finalTax = 0.0;
+    public double calculateTaxAge(double income, int age, double additional, double deductions) {
+        double tax;
+        double finalTax;
 
         if (income < 0) {
             throw new IllegalArgumentException("Income cannot be negative.");
         }
 
+        income = income + (additional - deductions);
         if (age < 65) {
             if (income <= 95750){
                 tax = 0;
@@ -109,6 +110,7 @@ public class TaxService {
     }
 }
     finalTax = tax / 12;
+    finalTax = Math.round(finalTax * 100.0) / 100.0;
     return finalTax;
 }
 }
