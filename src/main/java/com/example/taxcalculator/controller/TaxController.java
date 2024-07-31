@@ -41,7 +41,9 @@ public class TaxController {
     }
 
     @PostMapping("/calculatewithAge")
-    public String calculateWithAge(@RequestParam("income2") double income2, @RequestParam("age") int age, @RequestParam("additional") double additional, @RequestParam("deduction") double deduction, Model model) {
+    public String calculateWithAge(@RequestParam("income2") double income2, @RequestParam("age") int age,
+                                   @RequestParam(value = "additional", defaultValue = "0") double additional,
+                                   @RequestParam(value = "deduction", defaultValue = "0") double deduction, Model model) {
         try {
             if (age < 0) {
                 throw new IllegalArgumentException("Age cannot be negative.");
@@ -49,7 +51,7 @@ public class TaxController {
             if (income2 < 0) {
                 throw new IllegalArgumentException("Income must be greater than 0.");
             }
-            double tax2 = taxService.calculateTaxAge(income2, age, additional, deductions );
+            double tax2 = taxService.calculateTaxAge(income2, age, additional, deduction );
             model.addAttribute("income2", income2);
             model.addAttribute("age", age);
             model.addAttribute("additional", additional);
