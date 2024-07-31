@@ -3,157 +3,195 @@
   <head>
     <title>Tax Calculator</title>
     <style>
-      :root {
-        --Lime: hsl(61, 70%, 52%);
-        --Red: hsl(4, 69%, 50%);
-        --White: hsl(0, 0%, 100%);
-        --Slate_100: hsl(202, 86%, 94%);
-        --Slate_300: hsl(203, 41%, 72%);
-        --Slate_500: hsl(200, 26%, 54%);
-        --Slate_700: hsl(200, 24%, 40%);
-        --Slate_900: hsl(202, 55%, 16%);
-      }
-      @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: "Plus Jakarta Sans", sans-serif;
-      }
+:root {
+  --Lime: hsl(61, 70%, 52%);
+  --Red: hsl(4, 69%, 50%);
+  --White: hsl(0, 0%, 100%);
+  --Slate_100: hsl(202, 86%, 94%);
+  --Slate_300: hsl(203, 41%, 72%);
+  --Slate_500: hsl(200, 26%, 54%);
+  --Slate_700: hsl(200, 24%, 40%);
+  --Slate_900: hsl(202, 55%, 16%);
+}
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
 
-      body {
-        background-color: var(--Slate_100) !important;
-        height: 100vh;
-      }
+body {
+  background-color: var(--Slate_100) !important;
+  height: 100vh;
+}
 
-      .topBanner h1 {
-        color: var(--Slate_900);
-        font-size: 21px;
-        font-weight: 700;
-      }
-      .topBanner button {
-        text-decoration: underline;
-        color: rgb(156, 153, 153);
-        background-color: transparent;
-      }
-      .calculator {
-        display: flex;
-        background-color: var(--White);
-        width: 900px;
-        margin-left: auto !important;
-        margin-right: auto !important;
-      }
+.topBanner h1 {
+  color: var(--Slate_900);
+  font-size: 21px;
+  font-weight: 700;
+}
+.topBanner button {
+  text-decoration: underline;
+  color: rgb(156, 153, 153);
+  background-color: transparent;
+}
+.calculator {
+  display: flex;
+  background-color: var(--White);
+  width: 900px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 10%;
+}
 
-      .topBanner {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        margin: 10px;
-      }
-      #basic_Form {
-        width: 450px;
-        margin: 10px;
-      }
-      main label {
-        display: block;
-        color: gray;
-        margin: 10px 0 -5px 0;
-      }
+.topBanner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+#basic_Form {
+  width: 450px;
+  margin: 10px;
+}
+main label {
+  display: block;
+  color: gray;
+  margin: 10px 0 -5px 0;
+}
 
-      main input {
-        height: 30px;
-        border: none;
-        border-bottom: var(--Slate_900) solid 1px;
-        width: 80%;
-        outline: none;
-      }
-      main button {
-        border: none;
-      }
+main input {
+  height: 30px;
+  border: none;
+  border-bottom: var(--Slate_900) solid 1px;
+  width: 80%;
+  outline: none;
+}
+main button {
+  border: none;
+}
 
-      #optional .otherIncome {
-        display: flex;
-        flex-wrap: wrap;
-      }
+#optional .otherIncome {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-      #optional input {
-        width: 180px;
-        margin: 20px 7px;
-      }
+#optional input {
+  width: 180px;
+  margin: 20px 7px;
+}
 
-      .rand {
-        font-size: 15px;
-        padding: 0 5x 0 10px;
-      }
+.rand {
+  font-size: 15px;
+  padding: 0 5x 0 10px;
+}
 
-      #optional label {
-        color: var(--Slate_900);
-      }
-      #basic_Form button {
-        background-color: var(--Lime);
-        font-size: 20px;
-        height: 35px;
-        width: 65%;
-        font-weight: 700;
-        border-radius: 15px;
-        text-align: center;
-        margin-top: 35px;
-        margin-left: 65px;
-      }
-      /* tabbed Content */
-      #tabbed-content {
-        background-color: var(--Slate_900);
-        width: 100%;
-        border-bottom-left-radius: 70px;
-      }
-      #tabbed-content .panel {
-        display: none;
-        background-color: var(--Slate_900);
-        width: 100%;
-        border-bottom-left-radius: 70px;
-        height: 390px;
-      }
+#optional label {
+  color: var(--Slate_900);
+}
+#basic_Form button {
+  background-color: var(--Lime);
+  font-size: 20px;
+  height: 35px;
+  width: 65%;
+  font-weight: 700;
+  border-radius: 15px;
+  text-align: center;
+  margin-top: 35px;
+  margin-left: 65px;
+}
+/* tabbed Content */
+#tabbed-content {
+  background-color: var(--Slate_900);
+  width: 100%;
+  border-bottom-left-radius: 70px;
+}
+#tabbed-content .panel {
+  display: none;
+  background-color: var(--Slate_900);
+  width: 100%;
+  border-bottom-left-radius: 70px;
+  height: 390px;
+}
 
-      #tabbed-content li {
-        display: inline-block;
-        padding: 10px 14px;
-        background: #ddd;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-right: 10px;
-      }
+#tabbed-content .panel.active {
+  display: block;
+}
 
-      #tabbed-content .panel.active {
-        display: block;
-      }
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-      .empty {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
+.empty p {
+  font-size: 16px;
+  color: gray;
+  text-align: center;
+}
 
-      .empty p {
-        font-size: 16px;
-        color: gray;
-        text-align: center;
-      }
+.empty h3,
+.completed h3 {
+  color: var(--White);
+  font-size: 20px;
+}
+.completed {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 25px;
+}
+.completed p {
+  font-size: 14px;
+  color: gray;
+  text-align: left;
+  margin: 10px 0;
+}
 
-      .empty h3 {
-        color: var(--White);
-        font-size: 20px;
-      }
+.resultshow {
+  background-color: #0e2431;
+  height: 180px;
+  width: 360px;
+  margin: 35px auto;
+  border-radius: 5%;
+  border-top: var(--Lime) 5px solid;
+}
+
+.resultshow .repayment {
+  font-size: 30px;
+  color: var(--Lime);
+  margin: 20px;
+  font-weight: 700;
+}
+.resultshow hr {
+  background-color: lightgray;
+  border-top: 2px solid gray;
+  height: 2px;
+  margin: 2px 0;
+}
+
+.totalrep {
+  color: var(--White);
+  font-size: 20px;
+  margin: 10px 25px;
+  font-weight: 500;
+}
+
+.resultshow p {
+  margin-left: 10px;
+}
+
     </style>
   </head>
   <body>
-    <h3 class="text-center">Personal income for 2024/2025</h3>
+    <h3 class="text-center m-5">Personal income for 2024/2025</h3>
     <main class="container">
       <div class="calculator">
         <div class="inputResult">
           <div class="topBanner">
             <h1>Tax Calculator</h1>
-            <button>Clear All</button>
+            <button id="clearAll">Clear All</button>
           </div>
           <form action="/calculatewithAge" method="post" id="basic_Form">
             <div class="ageGroup">
@@ -178,6 +216,7 @@
                     name="otherIncome"
                     id="otherIncome"
                     placeholder="Your Other Income"
+                    text="5200"
                   />
                   <span class="rand">R</span>
                   <input
@@ -193,34 +232,78 @@
           </form>
         </div>
         <div class="result">
-          <div th:if="${error}" style="color: red">
-            <p th:text="${error}"></p>
-          </div>
-          <div>
-            <h1>Tax Calculation Result</h1>
-            <p th:if="${income != null and income != ''}">
-              Income: R<span th:text="${income}"></span>
-            </p>
-            <p th:if="${tax != null and tax != ''}">
-              Tax to be paid: R<span th:text="${tax}"></span>
-            </p>
+          <div id="tabbed-content">
+            <ul class="tabs">
+              <li data-target="#contact"></li>
+            </ul>
+            <div class="panel active" id="about">
+              <div class="empty">
+                <img src="../images/illustration-empty.svg" alt="" />
+                <h3>Results shown here</h3>
+                <p>
+                  Complete the form and click “calculate repayments” to see what
+                  your monthly repayments would be.
+                </p>
+              </div>
+            </div>
+            <div class="panel" id="contact">
+              <div class="completed">
+                <h3>Your results</h3>
+                <p>
+                  Your results are shown below based on the information you
+                  provided. To adjust the results, edit the form and click
+                  “calculate repayments” again.
+                </p>
 
-            <p th:if="${age != null and age != ''}">
-              Age: <span th:text="${age}"></span>
-            </p>
-            <p th:if="${income2 != null and income2 != ''}">
-              Income: R<span th:text="${income2}"></span>
-            </p>
-            <p th:if="${tax2 != null and tax2 != ''}">
-              Tax to be paid: R <span th:text="${tax2}"></span> per month
-            </p>
-
-            <a href="/">Calculate another tax</a>
+                <div class="resultshow">
+                  <p>Your monthly repayments</p>
+                  <span class="repayment" for="repayments">
+                    R <div class="d-inline-block" th:if="${income2 != null and income2 != ''}">
+                        <span th:text="${income2}"></span>
+                      </div>
+                    </span>
+                    <hr>
+                  <p>Total you'll repay over the term</p>
+                  <span class="totalrep" for="totalRepayment">
+                    R <div class="d-inline-block" th:if="${income2 != null and income2 != ''}">
+                        <span th:text="${income2}"></span>
+                      </div>
+                </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
+    <script>
+        const tabs = document.querySelector(".tabs");
+  const panels = document.querySelectorAll(".panel");
+  tabs.addEventListener("click", (e) => {
+    if (e.target.tagName == "LI") {
+      const targetPanel = document.querySelector(e.target.dataset.target);
+      Array.from(panels).forEach((panel) => {
+        if (panel == targetPanel) {
+          panel.classList.add("active");
+        } else {
+          panel.classList.remove("active");
+        }
+      });
+    }
+  });
 
-    <h1>Income Tax Calculator Based on Age</h1>
+  document
+    .getElementById("basic_Form")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      document.querySelector(".panel.active").classList.remove("active");
+      document.getElementById("contact").classList.add("active");
+    });
+
+  document.getElementById("clearAll").addEventListener("click", function () {
+    document.getElementById("basic_Form").reset();
+  });
+    </script>
   </body>
 </html>
