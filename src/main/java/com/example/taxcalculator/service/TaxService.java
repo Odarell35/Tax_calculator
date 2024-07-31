@@ -5,9 +5,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class TaxService {
 
-    private static final int TAXPAYER_CREDIT_2024 = 364;
-    private static final int DEPENDANT_CREDIT_2024 = 246;
-
     public double calculateTax(double income) {
         if (income < 0) {
             throw new IllegalArgumentException("Income cannot be negative.");
