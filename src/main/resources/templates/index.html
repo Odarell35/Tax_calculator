@@ -42,8 +42,13 @@
 }
 
 body {
-  background-color: var(--Slate_100) !important;
+  background-color: whitesmoke !important;
   height: 100vh;
+}
+.top-header{
+  font-size:40px;
+  font-weight:900;
+  color:var(--Slate_900)
 }
 
 .topBanner h1 {
@@ -62,7 +67,9 @@ body {
   width: 900px;
   margin-left: auto !important;
   margin-right: auto !important;
-  margin-top: 10%;
+  margin-top:0;
+  box-shadow:#0e2431 7px 7px 7px 7px;
+  border-radius:10px;
 }
 
 .topBanner {
@@ -78,7 +85,7 @@ body {
 main label {
   display: block;
   color: gray;
-  margin: 10px 0 -5px 0;
+  margin: 10px 0 5px 0;
 }
 
 main input {
@@ -118,7 +125,7 @@ main button {
   font-weight: 700;
   border-radius: 15px;
   text-align: center;
-  margin-top: 35px;
+  margin-top: 25px;
   margin-left: 65px;
 }
 /* tabbed Content */
@@ -139,6 +146,11 @@ main button {
   display: block;
 }
 
+
+#tabbed-content li {
+  display: inline-block;
+  list-type:none;
+}
 .empty {
   display: flex;
   justify-content: center;
@@ -202,10 +214,11 @@ main button {
   margin-left: 10px;
 }
 
+
     </style>
   </head>
   <body>
-    <h3 class="text-center m-5">Personal income for 2024/2025</h3>
+    <h3 class="top-header text-center m-5">Personal income for 2024/2025</h3>
     <main class="container">
       <div class="calculator">
         <div class="inputResult">
@@ -249,12 +262,13 @@ main button {
               </div>
             </div>
             <button type="submit">Calculate Tax</button>
+            <button type="button" class="gettax">Show Result</button>
           </form>
         </div>
         <div class="result">
           <div id="tabbed-content">
             <ul class="tabs">
-              <li data-target="#contact"></li>
+              <li data-target="#contact" class="active">Show Result</li>
             </ul>
             <div class="panel active" id="about">
               <div class="empty">
@@ -312,18 +326,18 @@ main button {
     }
   });
 
-<!--  document-->
-<!--    .getElementById("basic_Form")-->
-<!--    .addEventListener("submit", function (e) {-->
-<!--      e.preventDefault();-->
+  document.querySelector(".gettax").addEventListener("click", function(e) {
+    e.preventDefault();
+    
+    document.querySelector(".panel.active").classList.remove("active");
+    document.getElementById("contact").classList.add("active");
+});
 
-<!--      document.querySelector(".panel.active").classList.remove("active");-->
-<!--      document.getElementById("contact").classList.add("active");-->
-<!--    });-->
 
   document.getElementById("clearAll").addEventListener("click", function () {
     document.getElementById("basic_Form").reset();
   });
+
     </script>
   </body>
 </html>
