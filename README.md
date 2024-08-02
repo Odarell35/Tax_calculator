@@ -31,9 +31,9 @@ Includes various tax credits such as the Child Tax Credit, Education Credits, an
 git clone https://github.com/Odarell35/Tax_calculator.git
 
 - To run:
-
-        javac unitconverter.java
-        java unitconverter
+- 
+         cd tax_calculator
+         mvn spring-boot:run
 
 ## Screenshot
 ![image](https://github.com/user-attachments/assets/75acb7b1-b252-4c2a-947e-d5317be86f0b)
