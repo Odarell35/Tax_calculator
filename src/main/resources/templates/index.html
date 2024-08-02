@@ -230,7 +230,7 @@ main button {
             <div class="ageGroup">
               <label for="age">Enter your age:</label>
               <div class="flex">
-                <input type="number" id="age" name="age" required />
+                <input type="number" id="age" name="age" min="16" max="130" required />
                 <span class="rand">Years</span>
               </div>
             </div>
@@ -292,16 +292,17 @@ main button {
                 <div class="resultshow">
                   <p>Your monthly repayments</p>
                   <span class="repayment" for="repayments">
-                    R <div class="d-inline-block" th:if="${income2 != null and income2 != ''}">
-                        <span th:text="${tax2}"></span>
+                    R <div class="d-inline-block" th:if="${monthlyTaxContribution != null and monthlyTaxContribution != ''}">
+                        <span th:text="${monthlyTaxContribution}"></span>
                       </div>
                     </span>
                     <hr>
-                  <p>Total you'll repay over the term</p>
+                  <p>Total you'll repay over a year</p>
                   <span class="totalrep" for="totalRepayment">
-                    R <div class="d-inline-block" th:if="${income2 != null and income2 != ''}">
-                        <span th:text="${yearly}"></span>
+                    R <div class="d-inline-block" th:if="${yearlyTaxContribution != null and yearlyTaxContribution != ''}">
+                        <span th:text="${yearlyTaxContribution}"></span>
                       </div>
+                  </span>
                 </div>
                 </div>
               </div>

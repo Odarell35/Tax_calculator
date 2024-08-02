@@ -51,13 +51,14 @@ public class TaxController {
             if (income2 < 0) {
                 throw new IllegalArgumentException("Income must be greater than 0.");
             }
-            double tax2 = taxService.calculateTaxAge(income2, age, additional, deduction );
+            double monthlyTaxContribution = taxService.calculateTaxAge(income2, age, additional, deduction );
             model.addAttribute("income2", income2);
             model.addAttribute("age", age);
             model.addAttribute("additional", additional);
             model.addAttribute("deduction", deduction);
-            model.addAttribute("tax2", tax2);
-            model.addAttribute("yearly", tax2 * 12);
+            model.addAttribute("monthlyTaxContribution", monthlyTaxContribution);
+            model.addAttribute("yearlyTaxContribution", Math.round((monthlyTaxContribution * 12)
+                    * 100.0) / 100.0);
             return "index";
         } catch (IllegalArgumentException e) {
             model.addAttribute("error", e.getMessage());
