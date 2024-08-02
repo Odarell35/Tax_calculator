@@ -36,5 +36,10 @@ git clone https://github.com/Odarell35/Tax_calculator.git
         java unitconverter
 
 ## Screenshot
+![image](https://github.com/user-attachments/assets/75acb7b1-b252-4c2a-947e-d5317be86f0b)
 
 ## Authors
+- Lerato Mawasha
+- Waseem Ahmad Ebrahim
+- Xolani Sithole
+- Granny Mathonsi
