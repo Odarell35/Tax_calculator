@@ -230,14 +230,14 @@ main button {
             <div class="ageGroup">
               <label for="age">Enter your age:</label>
               <div class="flex">
-                <input type="number" id="age" name="age" required />
+                <input type="number" id="age" name="age" min="1" max="100" required />
                 <span class="rand">Years</span>
               </div>
             </div>
             <label for="income2">Enter your income:</label>
             <div class="flex">
               <span class="rand">R</span>
-              <input type="number" id="income2" name="income2" required />
+              <input type="number" id="income2" name="income2" required min="1" />
             </div>
             <div id="optional">
               <label for="additional"> Other Income (Optional) </label>
@@ -249,7 +249,7 @@ main button {
                     name="additional"
                     id="additional"
                     placeholder="Your Other Income"
-                    text="5200"
+                    min="1"
                   />
                   <span class="rand">R</span>
                   <input
@@ -257,6 +257,7 @@ main button {
                     name="deduction"
                     id="deduction"
                     placeholder="Deductions on your Income"
+                    min="1"
                   />
                 </div>
               </div>
@@ -297,7 +298,7 @@ main button {
                       </div>
                     </span>
                     <hr>
-                  <p>Total you'll repay over the term</p>
+                  <p>Total you'll repay over a year</p>
                   <span class="totalrep" for="totalRepayment">
                     R <div class="d-inline-block" th:if="${income2 != null and income2 != ''}">
                         <span th:text="${yearly}"></span>
