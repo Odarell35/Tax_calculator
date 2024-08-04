@@ -5,7 +5,7 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Tax Calculator</title>
-      <!-- St -->
+      <!-- Style -->
       <link rel="stylesheet" href="./style.css" />
       <!-- bootsrap -->
       <link
@@ -43,7 +43,6 @@
 
 body {
   background-color: whitesmoke !important;
-  height: 100vh;
 }
 .top-header{
   font-size:40px;
@@ -63,13 +62,13 @@ body {
 }
 .calculator {
   display: flex;
+  flex-wrap: wrap;
   background-color: var(--White);
-  width: 900px;
   margin-left: auto !important;
   margin-right: auto !important;
-  margin-top:0;
   box-shadow:#0e2431 7px 7px 7px 7px;
   border-radius:10px;
+  width: fit-content;
 }
 
 .topBanner {
@@ -78,10 +77,25 @@ body {
   flex-wrap: wrap;
   margin: 10px;
 }
-#basic_Form {
+.inputResult {
   width: 450px;
-  margin: 10px;
+  margin: 10px 0 10px 10px;
 }
+
+.result{
+  width:450px;
+}
+
+@media (mAX-width:995px) {
+  .inputResult, .result{
+    width:100%;  
+ 
+  }
+  #optional input {
+  width: 100%;
+  }
+}
+
 main label {
   display: block;
   color: gray;
@@ -110,8 +124,9 @@ main button {
 }
 
 .rand {
-  font-size: 15px;
+  font-size: 20px;
   padding: 0 5x 0 10px;
+  font-weight: 700;
 }
 
 #optional label {
@@ -214,16 +229,54 @@ main button {
   margin-left: 10px;
 }
 
+/* hero */
+.headline {
+  left: 130px;
+} 
+.clipped {
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
+}
+@media screen and (max-width: 650px){
+  .headline {
+    left: 20px;
+  } 
+  .clipped {
+    clip-path: none;
+    max-height: 300px !important;
+  }
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
 
     </style>
   </head>
   <body>
-    <h3 class="top-header text-center m-5">Personal income for 2024/2025</h3>
+    
     <main class="container">
+<div class="d-sm-flex align-items-center justify-content-between w-100" style="height: 100vh;">
+  <div class="col-md-4 mx-auto mb-4 mb-sm-0 headline">
+    <span class="text-secondary text-uppercase">South African Revenue Service</span>
+    <h1 class="display-4 my-4 font-weight-bold">Get savvy with
+<span style="color: var(--Lime)">your income tax</span></h1>
+    <a href="#basic_Form" class="btn px-5 py-3 text-white mt-3 mt-sm-0" style="border-radius: 30px; background-color: var(--Lime);">CALCULATE     TAX</a>
+  </div>
+  <!-- in mobile remove the clippath -->
+  <div class="col-md-8 h-100 clipped" style="min-height: 350px; background-image: url(https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80); background-position: center; background-size: cover;">
+
+  </div>
+</div>
+<Below class="container">
+  <h3 class="top-header text-center m-2">Calculate your personal income tax for 2024/2025</h3>
+  <p class="text-center">Use our online income tax calculator designed for individuals to help you work out your estimated monthly take-home pay in South Africa after PAYE (“pay as you earn”) tax is deducted from your salary. You can use the advanced version of the calculator to add other income and your contributions towards your medical aid, pension fund, provident fund, or retirement annuity.</p>
+
+<p class="text-center">You can also access the income tax tables for individuals for the 2025 tax year <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/">(1 March 2024 – 28 February 2025)</a>.</p>
+</div>
+      <hr class="m-5">
       <div class="calculator">
         <div class="inputResult">
           <div class="topBanner">
-            <h1>Tax Calculator</h1>
+            <h1> SARS Tax Calculator</h1>
             <button id="clearAll">Clear All</button>
           </div>
           <form action="/calculatewithAge" method="post" id="basic_Form">
@@ -268,7 +321,7 @@ main button {
         <div class="result">
           <div id="tabbed-content">
             <ul class="tabs">
-              <li data-target="#contact" class="active">Show Result</li>
+              <li data-target="#contact" class=""></li>
             </ul>
             <div class="panel active" id="about">
               <div class="empty">
@@ -311,6 +364,9 @@ main button {
         </div>
       </div>
     </main>
+    <div class="attribution"> 
+    Coded by <a href="#">Tech Hive</a>.
+  </div>
     <script>
         const tabs = document.querySelector(".tabs");
   const panels = document.querySelectorAll(".panel");
