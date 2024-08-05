@@ -59,7 +59,7 @@ public class TaxController {
             model.addAttribute("monthlyTaxContribution", monthlyTaxContribution);
             model.addAttribute("yearlyTaxContribution", Math.round((monthlyTaxContribution * 12)
                     * 100.0) / 100.0);
-            return "index";
+            return "results";
         } catch (IllegalArgumentException e) {
             model.addAttribute("error", e.getMessage());
             return "index";

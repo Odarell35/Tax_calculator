@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>result</title>
+    <style>
+      :root {
+        --Lime: hsl(61, 70%, 52%);
+        --Red: hsl(4, 69%, 50%);
+        --White: hsl(0, 0%, 100%);
+        --Slate_100: hsl(202, 86%, 94%);
+        --Slate_300: hsl(203, 41%, 72%);
+        --Slate_500: hsl(200, 26%, 54%);
+        --Slate_700: hsl(200, 24%, 40%);
+        --Slate_900: hsl(202, 55%, 16%);
+      }
+      @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      body {
+        background-color: whitesmoke !important;
+      }
+      .top-header {
+        font-size: 40px;
+        font-weight: 900;
+        color: var(--Slate_900);
+      }
+
+      .topBanner h1 {
+        color: var(--Slate_900);
+        font-size: 21px;
+        font-weight: 700;
+      }
+      .topBanner button {
+        text-decoration: underline;
+        color: rgb(156, 153, 153);
+        background-color: transparent;
+      }
+      .calculator {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: var(--White);
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-shadow: #0e2431 7px 7px 7px 7px;
+        border-radius: 10px;
+        width: fit-content;
+      }
+
+      .topBanner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 10px;
+      }
+      .inputResult {
+        width: 450px;
+        margin: 10px 0 10px 10px;
+      }
+
+      .result {
+        width: 450px;
+      }
+
+      @media (max-width: 995px) {
+        .inputResult,
+        .result {
+          width: 100%;
+        }
+        #optional input {
+          width: 100%;
+        }
+      }
+
+      main label {
+        display: block;
+        color: gray;
+        margin: 10px 0 5px 0;
+      }
+
+      main input {
+        height: 30px;
+        border: none;
+        border-bottom: var(--Slate_900) solid 1px;
+        width: 80%;
+        outline: none;
+      }
+      main button {
+        border: none;
+      }
+
+      #optional .otherIncome {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      #optional input {
+        width: 180px;
+        margin: 20px 7px;
+      }
+
+      .rand {
+        font-size: 20px;
+        padding: 0 5x 0 10px;
+        font-weight: 700;
+      }
+
+      #optional label {
+        color: var(--Slate_900);
+      }
+      #basic_Form button {
+        background-color: var(--Lime);
+        font-size: 20px;
+        height: 35px;
+        width: 65%;
+        font-weight: 700;
+        border-radius: 15px;
+        text-align: center;
+        margin-top: 25px;
+        margin-left: 65px;
+      }
+      /* tabbed Content */
+      #tabbed-content {
+        background-color: var(--Slate_900);
+        width: 100%;
+        border-bottom-left-radius: 70px;
+      }
+      #tabbed-content .panel {
+        display: none;
+        background-color: var(--Slate_900);
+        width: 100%;
+        border-bottom-left-radius: 70px;
+        height: 390px;
+      }
+
+      #tabbed-content .panel.active {
+        display: block;
+      }
+
+      #tabbed-content li {
+        display: inline-block;
+        list-type: none;
+      }
+      .empty {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .empty p {
+        font-size: 16px;
+        color: gray;
+        text-align: center;
+      }
+
+      .empty h3,
+      .completed h3 {
+        color: var(--White);
+        font-size: 20px;
+      }
+      .completed {
+        display: flex;
+        flex-flow: column wrap;
+        margin: 25px;
+      }
+      .completed p {
+        font-size: 14px;
+        color: gray;
+        text-align: left;
+        margin: 10px 0;
+      }
+
+      .resultshow {
+        background-color: #0e2431;
+        height: 180px;
+        width: 360px;
+        margin: 35px auto;
+        border-radius: 5%;
+        border-top: var(--Lime) 5px solid;
+      }
+
+      .resultshow .repayment {
+        font-size: 30px;
+        color: var(--Lime);
+        margin: 20px;
+        font-weight: 700;
+      }
+      .resultshow hr {
+        background-color: lightgray;
+        border-top: 2px solid gray;
+        height: 2px;
+        margin: 2px 0;
+      }
+
+      .totalrep {
+        color: var(--White);
+        font-size: 20px;
+        margin: 10px 25px;
+        font-weight: 500;
+      }
+
+      .resultshow p {
+        margin-left: 10px;
+      }
+
+      /* hero */
+      .headline {
+        left: 130px;
+      }
+      .clipped {
+        clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
+      }
+      @media screen and (max-width: 650px) {
+        .headline {
+          left: 20px;
+        }
+        .clipped {
+          clip-path: none;
+          max-height: 300px !important;
+        }
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="result">
+      <div class="completed">
+        <h3>Your results</h3>
+        <p>
+          Your results are shown below based on the information you provided. To
+          adjust the results, edit the form and click “calculate repayments”
+          again.
+        </p>
+
+        <div class="resultshow">
+          <p>Your monthly repayments</p>
+          <span class="repayment" for="repayments">
+            R
+            <div
+              class="d-inline-block"
+              th:if="${monthlyTaxContribution != null and monthlyTaxContribution != ''}"
+            >
+              <span th:text="${monthlyTaxContribution}"></span>
+            </div>
+          </span>
+          <hr />
+          <p>Total you'll repay over a year</p>
+          <span class="totalrep" for="totalRepayment">
+            R
+            <div
+              class="d-inline-block"
+              th:if="${yearlyTaxContribution != null and yearlyTaxContribution != ''}"
+            >
+              <span th:text="${yearlyTaxContribution}"></span>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

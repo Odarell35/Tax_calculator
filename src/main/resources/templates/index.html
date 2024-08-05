@@ -21,6 +21,8 @@
       ></script>
       <!-- Script -->
       <script src="./script.js"></script>
+      <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <style>
 :root {
@@ -266,7 +268,7 @@ main button {
 
   </div>
 </div>
-<Below class="container">
+<div class="container">
   <h3 class="top-header text-center m-2">Calculate your personal income tax for 2024/2025</h3>
   <p class="text-center">Use our online income tax calculator designed for individuals to help you work out your estimated monthly take-home pay in South Africa after PAYE (“pay as you earn”) tax is deducted from your salary. You can use the advanced version of the calculator to add other income and your contributions towards your medical aid, pension fund, provident fund, or retirement annuity.</p>
 
@@ -287,7 +289,7 @@ main button {
                 <span class="rand">Years</span>
               </div>
             </div>
-            <label for="income2">Enter your income:</label>
+            <label for="income2">Enter your Annual income:</label>
             <div class="flex">
               <span class="rand">R</span>
               <input type="number" id="income2" name="income2" required min="1" />
@@ -315,7 +317,6 @@ main button {
               </div>
             </div>
             <button type="submit">Calculate Tax</button>
-            <button type="button" class="gettax">Show Result</button>
           </form>
         </div>
         <div class="result">
@@ -367,34 +368,35 @@ main button {
     <div class="attribution"> 
     Coded by <a href="#">Tech Hive</a>.
   </div>
-    <script>
-        const tabs = document.querySelector(".tabs");
-  const panels = document.querySelectorAll(".panel");
-  tabs.addEventListener("click", (e) => {
-    if (e.target.tagName == "LI") {
-      const targetPanel = document.querySelector(e.target.dataset.target);
-      Array.from(panels).forEach((panel) => {
-        if (panel == targetPanel) {
-          panel.classList.add("active");
-        } else {
-          panel.classList.remove("active");
-        }
-      });
-    }
-  });
+  <script>
+    $(document).ready(function() {
+        $('#basic_Form').on('submit', function(event) {
+            event.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '/calculatewithAge',
+                data: $(this).serialize(),
+                success: function(response) {
+                    $('#contact .completed').html(response);
+                    $('#about').removeClass('active');
+                    $('#contact').addClass('active');
+                },
+                error: function(xhr, status, error) {
+                    alert('An error occurred: ' + xhr.responseText);
+                }
+            });
+        });
 
-  document.querySelector(".gettax").addEventListener("click", function(e) {
-    e.preventDefault();
-    
-    document.querySelector(".panel.active").classList.remove("active");
-    document.getElementById("contact").classList.add("active");
-});
+        $('#clearAll').on('click', function() {
+            $('#basic_Form')[0].reset();
+        });
 
-
-  document.getElementById("clearAll").addEventListener("click", function () {
-    document.getElementById("basic_Form").reset();
-  });
-
-    </script>
+        $('.tabs').on('click', 'li', function() {
+            var targetPanel = $(this).data('target');
+            $('.panel').removeClass('active');
+            $(targetPanel).addClass('active');
+        });
+    });
+</script>
   </body>
 </html>
