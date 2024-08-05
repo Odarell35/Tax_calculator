@@ -36,9 +36,12 @@ git clone https://github.com/Odarell35/Tax_calculator.git
          mvn spring-boot:run
 
 ## Screenshot
-![image](https://github.com/user-attachments/assets/8d05204e-481d-4179-8cd8-2b42b1d76b47)
+![image](https://github.com/user-attachments/assets/56b360e4-58d1-43e2-8f22-55e696f2e737)
 
-![image](https://github.com/user-attachments/assets/077d4a6c-1580-4c1b-a16e-440c9f1f959f)
+
+
+![image](https://github.com/user-attachments/assets/50596110-80e8-4c4d-b796-2f997442fe37)
+
 
 
 
