@@ -36,7 +36,11 @@ git clone https://github.com/Odarell35/Tax_calculator.git
          mvn spring-boot:run
 
 ## Screenshot
-![image](https://github.com/user-attachments/assets/75acb7b1-b252-4c2a-947e-d5317be86f0b)
+![image](https://github.com/user-attachments/assets/8d05204e-481d-4179-8cd8-2b42b1d76b47)
+
+![image](https://github.com/user-attachments/assets/077d4a6c-1580-4c1b-a16e-440c9f1f959f)
+
+
 
 ## Authors
 - Lerato Mawasha
