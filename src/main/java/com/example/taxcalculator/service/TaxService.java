@@ -42,9 +42,9 @@ public class TaxService {
         final double[] rates75Plus = {0.00, 0.00, 0.00, 0.03, 0.09, 0.15, 0.20, 0.24, 0.30, 0.39, 0.45};
 
         double tax = 0.0;
-        if (age <= 65) {
+        if (age < 65) {
             tax = calculateTax(income, brackets, ratesUnder65);
-        } else if (age <= 75) {
+        } else if (age < 75) {
             tax = calculateTax(income, brackets, rates65to74);
         } else {
             tax = calculateTax(income, brackets, rates75Plus);

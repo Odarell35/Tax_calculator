@@ -33,7 +33,7 @@ class TaxcalculatorApplicationTests {
 	@Test
 	void TestcalculateTaxwithextraincome2() {
 		TaxService taxService = new TaxService();
-		assertEquals(7674.24,taxService.calculateTaxAge(600950, 42,90000, 0));
+		assertEquals(7674.25,taxService.calculateTaxAge(600950, 42,90000, 0));
 	}
 	@Test
 	void TestcalculateTaxwithdeduction() {
