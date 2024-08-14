@@ -75,6 +75,13 @@ class TaxcalculatorApplicationTests {
 		TaxService taxService = new TaxService();
 		assertEquals(650.28,taxService.calculateTaxAge(300000, 75,0, 0));
 	}
+
+	@Test
+	void testCalculateTaxAge_EdgeCase_BracketBoundary() {
+		TaxService taxService = new TaxService();
+		assertEquals(0.0, taxService.calculateTaxAge(95750, 45, 0, 0));
+	}
+
 	@Test
 	void TestException(){
 		TaxService taxService = new TaxService();
